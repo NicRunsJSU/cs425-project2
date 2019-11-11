@@ -6,4 +6,11 @@
     <welcome-file-list>
         <welcome-file>main/main.jsp</welcome-file>
     </welcome-file-list>
+    <security-constraint>
+        <display-name>Constraint1</display-name>
+    </security-constraint>
+    <security-role>
+        <description/>
+        <role-name>applicant</role-name>
+    </security-role>
 </web-app>
