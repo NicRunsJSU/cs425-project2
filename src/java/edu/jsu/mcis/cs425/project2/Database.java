@@ -46,6 +46,10 @@ public class Database {
                 
                 if (resultset.next()){
                     
+                    //initialize HashMap; add user data from resultset
+                    //use key name "id" for the ID, and "displayname" for the 
+                    // displayname
+                    
                     
                 }
                 
