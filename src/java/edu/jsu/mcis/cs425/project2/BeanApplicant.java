@@ -1,5 +1,8 @@
 package edu.jsu.mcis.cs425.project2;
 
+import java.sql.SQLException;
+import java.util.HashMap;
+
 public class BeanApplicant {
     
     private String username;
@@ -7,7 +10,7 @@ public class BeanApplicant {
     private int id;
     
     
-    public void setUserInfo(){
+    public void setUserInfo() throws SQLException{
         
         Database db = new Database();
         HashMap<String, String> userinfo = db.getUserInfo(username);

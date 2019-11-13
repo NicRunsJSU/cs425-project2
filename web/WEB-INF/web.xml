@@ -8,6 +8,11 @@
     </welcome-file-list>
     <security-constraint>
         <display-name>Constraint1</display-name>
+        <web-resource-collection>
+            <web-resource-name>Applicant Constraint</web-resource-name>
+            <description>Basic constraints set to the applicant</description>
+            <url-pattern>/main/*</url-pattern>
+        </web-resource-collection>
     </security-constraint>
     <security-role>
         <description/>
