@@ -34,7 +34,7 @@ public class Database {
         
             Connection conn = getConnection();
             
-            String query = "SELECT * FROM  'user' WHERE username = ?";
+            String query = "SELECT * FROM  user WHERE username = ?";
             PreparedStatement pstatement = conn.prepareStatement(query);
             pstatement.setString(1, username);
             
@@ -42,6 +42,8 @@ public class Database {
             
             if (hasresults){
                
+                HashMap hm = new HashMap<>();
+                
                 ResultSet resultset = pstatement.getResultSet();
                 
                 if (resultset.next()){
@@ -51,7 +53,12 @@ public class Database {
                     // displayname
                     
                     
-                    
+                   String id = String.valueOf(resultset.getInt("id"));
+                   String displayName = resultset.getString("displayname");
+                   results = new HashMap<>();
+                   results.put("id", id);
+                   results.put("displayname", displayName);
+                   
                     
                 }
                 

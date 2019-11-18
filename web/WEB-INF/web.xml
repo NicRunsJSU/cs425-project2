@@ -13,9 +13,23 @@
             <description>Basic constraints set to the applicant</description>
             <url-pattern>/main/*</url-pattern>
         </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>applicant</role-name>
+        </auth-constraint>
     </security-constraint>
     <security-role>
         <description/>
         <role-name>applicant</role-name>
     </security-role>
+    <security-constraint>
+        <display-name>Constraint2</display-name>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/public/login.jsp</form-login-page>
+            <form-error-page>/public/login.jsp?error=1</form-error-page>
+        </form-login-config>
+    </login-config>
 </web-app>

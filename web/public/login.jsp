@@ -15,6 +15,17 @@
         <form id="loginform" name="loginform" method="POST" action="j_security_check" accept-charset="UTF-8">
 
             <!-- Insert your form elements here -->
+            
+            
+            
+            
+            <label for="j_username">Username: </label>
+            <input type="text" name="j_username" id="j_username" tabeindex=1><br/>
+            
+            <label for="j_password">Password: </label>
+            <input name="j_password" id="j_password" type="password" tabindex=2><br/>
+            
+            <input type="submit" value="Log In" tabindex=3>
 
         </form>
 
@@ -49,6 +60,7 @@
         %>
         
         <script type="text/javascript">
+            
 
         </script>
 
