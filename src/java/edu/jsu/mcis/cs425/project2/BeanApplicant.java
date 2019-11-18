@@ -6,8 +6,9 @@ import java.util.HashMap;
 public class BeanApplicant {
     
     private String username;
-    private String displayName;
+    private String displayname;
     private int id;
+    private String[] skills;
     
     
     public void setUserInfo() throws SQLException{
@@ -15,24 +16,49 @@ public class BeanApplicant {
         Database db = new Database();
         HashMap<String, String> userinfo = db.getUserInfo(username);
         id = Integer.parseInt(userinfo.get("id"));
-        displayName = userinfo.get("displayname");
+        displayname = userinfo.get("displayname");
 
     }
 
-    public String getDisplayName() {
-        return displayName;
+    
+/*  public void setSkillsList() {
+        
+        Database db = new Database();
+        
+        db.setSkillsList(id, skills);        
+    }
+*/
+    
+    
+/*  public String getJobsList() {
+        Database db = new Database();
+        return (db.getJobsAsHTML(id));
+    }
+*/  
+    
+    
+    public String[] getSkills() {
+        return skills;
+    }
+   
+    public String getDisplayname() {
+        return displayname;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
+    public void setDisplayname(String displayname) {
+        this.displayname = displayname;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setSkills(String[] skills) {
+        this.skills = skills;
     }
 
     
