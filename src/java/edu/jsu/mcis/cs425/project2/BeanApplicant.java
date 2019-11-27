@@ -20,8 +20,14 @@ public class BeanApplicant {
 
     }
 
+    public String getSkillsList() throws SQLException {
+        
+   Database db = new Database();
+   return ( db.getSkillsListAsHTML(id) );
+   
+    }
     
-/*  public void setSkillsList() {
+  /* public void setSkillsList() {
         
         Database db = new Database();
         
@@ -29,12 +35,13 @@ public class BeanApplicant {
     }
 */
     
-    
-/*  public String getJobsList() {
+  /*  
+  public String getJobsList() {
         Database db = new Database();
         return (db.getJobsAsHTML(id));
     }
-*/  
+  */
+    
     
     
     public String[] getSkills() {

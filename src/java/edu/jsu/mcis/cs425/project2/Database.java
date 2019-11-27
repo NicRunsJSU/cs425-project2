@@ -88,5 +88,60 @@ public class Database {
         return conn;
 
     }
-    //public setSkills
+    public String getSkillsListAsHTML(int userid) throws SQLException {
+
+        StringBuilder skills = new StringBuilder();
+        String skillsList;
+        
+        try {
+            Connection conn = getConnection();
+            
+            String query = "SELECT skills.*, a.userid FROM skills LEFT JOIN ( SELECT * FROM applicants_to_skills WHERE userid = 1) AS a ON skills.id = a.skillsid; ";
+            
+            PreparedStatement pstatement = conn.prepareStatement(query);
+            
+            boolean hasresults = pstatement.execute();
+            
+            if (hasresults) {
+                ResultSet resultSet = pstatement.getResultSet();
+                
+                while (resultSet.next()) {
+                    String description = resultSet.getString("description");
+                    int id = resultSet.getInt("id");
+                    int user =resultSet.getInt("userid");
+                    
+                    
+                    skills.append("<input type =\"checkbox\" name=\"skills\" value=\"");
+                    skills.append("id");
+                    skills.append("\" id=\"skills_").append(id).append("\" ");
+                    
+                    if(user != 0) {
+                        skills.append("checked ");
+                    }
+                    
+                    skills.append(">\n");
+                    
+                    skills.append("<label for=\"skills_").append(id).append("\">");
+                    skills.append(description);
+                    skills.append("</label><br />\n\n");
+                    
+                }
+                
+                
+            }
+            
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        skillsList = skills.toString();
+        
+        return skillsList;
+        
+
+
+
+
+    }
+
 }
