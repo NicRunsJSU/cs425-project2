@@ -14,6 +14,7 @@
         <h1>Hello, <jsp:getProperty name="applicant" property="displayname" />! </h1>
         <a href="<%= request.getContextPath() %>/main/applicant_skills.jsp">Skills</a><br> 
         <a href="<%= request.getContextPath() %>/public/logout.jsp" target="_self">Log Out</a>
+        <a href="<%= request.getContextPath() %>/main/applicant_jobs.jsp" target="_self">Jobs</a>
     </body>
     
 </html>

@@ -162,7 +162,7 @@ public class Database {
         }
 
     }
-    public String getJobsListAsHTML(int userid){
+    public String getJobsAsHTML(int userid){
         StringBuilder jobsList = new StringBuilder();
         try{
                Connection conn = getConnection();
