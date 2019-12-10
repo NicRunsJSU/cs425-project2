@@ -27,20 +27,20 @@ public class BeanApplicant {
    
     }
     
-  /* public void setSkillsList() {
+   public void setSkillsList() {
         
         Database db = new Database();
         
         db.setSkillsList(id, skills);        
     }
-*/
+
     
-  /*  
+   
   public String getJobsList() {
         Database db = new Database();
         return (db.getJobsAsHTML(id));
     }
-  */
+  
     
     
     
