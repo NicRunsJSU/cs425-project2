@@ -137,11 +137,31 @@ public class Database {
         skillsList = skills.toString();
         
         return skillsList;
+      
+    }
+    public void setSkillsList(int userid, String[] skills){
         
-
-
-
+        try{
+               Connection conn = getConnection();
+              
+               PreparedStatement stmt = conn.prepareStatement("DELETE FROM applicants_to_skills WHERE userid = ?");
+               stmt.setInt(1, userid);
+               stmt.execute();
+               PreparedStatement pstatement = conn.prepareStatement("INSERT INTO applicants_to_skills (userid, skillsid) VALUES(?,?)" );
+                for (String skill : skills) {
+                    int skillsid = Integer.parseInt(skill);
+                    pstatement.setInt(1, userid);
+                    pstatement.setInt(2, skillsid);
+                    pstatement.addBatch();
+                }
+                int[] r= pstatement.executeBatch();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        
+        }
 
     }
-
 }
+    
+
